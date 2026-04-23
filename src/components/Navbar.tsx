@@ -13,9 +13,9 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-black/95 backdrop-blur border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-[120px] lg:h-[130px]">
+        <div className="flex items-center justify-between h-20 lg:h-24">
           <Link href="/" className="flex items-center gap-2 shrink-0">
-            <Image src="/logoheader.png" alt="Car Candy Auto Detailing" width={170} height={100} className="h-auto w-auto" priority />
+            <Image src="/logoheader.png" alt="Car Candy Auto Detailing" width={170} height={100} className="h-14 lg:h-[72px] w-auto" priority />
           </Link>
 
           {/* Desktop Nav */}
