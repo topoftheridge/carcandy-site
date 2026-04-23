@@ -20,10 +20,10 @@ export default function Navbar() {
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center justify-end flex-1 ml-12">
-            <div className="flex items-center gap-10 mr-auto ml-8">
-              <Link href="/" className="text-gray-300 hover:text-primary transition font-medium">Home</Link>
-              <Link href="/about" className="text-gray-300 hover:text-primary transition font-medium">About</Link>
-              <Link href="/services" className="text-gray-300 hover:text-primary transition font-medium">Services</Link>
+            <div className="flex items-center gap-14 mr-auto ml-8">
+  <Link href="/" className="text-white text-lg hover:text-primary transition font-medium tracking-wide">Home</Link>
+  <Link href="/about" className="text-white text-lg hover:text-primary transition font-medium tracking-wide">About</Link>
+  <Link href="/services" className="text-white text-lg hover:text-primary transition font-medium tracking-wide">Services</Link>
               <div
                 className="relative"
                 onMouseEnter={() => setAreasOpen(true)}
