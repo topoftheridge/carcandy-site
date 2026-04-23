@@ -21,16 +21,16 @@ export default function Navbar() {
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center justify-end flex-1 ml-12">
             <div className="flex items-center gap-14 mr-auto ml-8">
-  <Link href="/" className="text-white text-lg hover:text-primary transition font-medium tracking-wide">Home</Link>
-  <Link href="/about" className="text-white text-lg hover:text-primary transition font-medium tracking-wide">About</Link>
-  <Link href="/services" className="text-white text-lg hover:text-primary transition font-medium tracking-wide">Services</Link>
+              <Link href="/" className="text-white text-lg hover:text-pink-400 transition font-medium tracking-wide">Home</Link>
+              <Link href="/about" className="text-white text-lg hover:text-pink-400 transition font-medium tracking-wide">About</Link>
+              <Link href="/services" className="text-white text-lg hover:text-pink-400 transition font-medium tracking-wide">Services</Link>
               <div
                 className="relative"
                 onMouseEnter={() => setAreasOpen(true)}
                 onMouseLeave={() => setAreasOpen(false)}
               >
-                <button className="text-gray-300 hover:text-primary transition font-medium flex items-center gap-1">
-                  Areas <ChevronDown className="w-4 h-4" />
+                <button className="text-white text-lg hover:text-pink-400 transition font-medium tracking-wide flex items-center gap-1">
+                  Areas <ChevronDown className="w-5 h-5" />
                 </button>
                 {areasOpen && (
                   <div className="absolute top-full left-0 mt-0 pt-2">
@@ -39,7 +39,7 @@ export default function Navbar() {
                         <Link
                           key={loc.slug}
                           href={`/${loc.slug}`}
-                          className="block px-4 py-2 text-sm text-gray-300 hover:bg-primary hover:text-white transition"
+                          className="block px-4 py-2.5 text-base text-gray-300 hover:bg-pink-400/20 hover:text-pink-400 transition"
                         >
                           {loc.name}, PA
                         </Link>
@@ -48,12 +48,12 @@ export default function Navbar() {
                   </div>
                 )}
               </div>
-              <Link href="/contact" className="text-gray-300 hover:text-primary transition font-medium">Contact</Link>
+              <Link href="/contact" className="text-white text-lg hover:text-pink-400 transition font-medium tracking-wide">Contact</Link>
             </div>
 
             <div className="flex items-center gap-4">
-              <a href="tel:+13023399679" className="text-primary hover:text-primary-light transition font-bold text-lg flex items-center gap-1.5">
-                <Phone className="w-4 h-4" />
+              <a href="tel:+13023399679" className="text-white hover:text-pink-400 transition font-bold text-lg flex items-center gap-1.5">
+                <Phone className="w-5 h-5" />
                 (302) 339-9679
               </a>
               <Link
@@ -74,21 +74,21 @@ export default function Navbar() {
       {mobileOpen && (
         <div className="lg:hidden bg-black border-t border-white/10 max-h-[80vh] overflow-y-auto">
           <div className="px-4 py-4 space-y-3">
-            <Link href="/" className="block font-medium text-gray-300 hover:text-primary" onClick={() => setMobileOpen(false)}>Home</Link>
-            <Link href="/about" className="block font-medium text-gray-300 hover:text-primary" onClick={() => setMobileOpen(false)}>About</Link>
-            <Link href="/services" className="block font-medium text-gray-300 hover:text-primary" onClick={() => setMobileOpen(false)}>Services</Link>
+            <Link href="/" className="block font-medium text-lg text-white hover:text-pink-400" onClick={() => setMobileOpen(false)}>Home</Link>
+            <Link href="/about" className="block font-medium text-lg text-white hover:text-pink-400" onClick={() => setMobileOpen(false)}>About</Link>
+            <Link href="/services" className="block font-medium text-lg text-white hover:text-pink-400" onClick={() => setMobileOpen(false)}>Services</Link>
             <div>
-              <p className="font-medium text-gray-300 mb-2">Areas Served</p>
+              <p className="font-medium text-lg text-white mb-2">Areas Served</p>
               <div className="pl-4 space-y-2">
                 {locations.map((loc) => (
-                  <Link key={loc.slug} href={`/${loc.slug}`} className="block text-sm text-gray-400 hover:text-primary" onClick={() => setMobileOpen(false)}>
+                  <Link key={loc.slug} href={`/${loc.slug}`} className="block text-base text-gray-400 hover:text-pink-400" onClick={() => setMobileOpen(false)}>
                     {loc.name}, PA
                   </Link>
                 ))}
               </div>
             </div>
-            <Link href="/contact" className="block font-medium text-gray-300 hover:text-primary" onClick={() => setMobileOpen(false)}>Contact</Link>
-            <a href="tel:+13023399679" className="block font-bold text-primary text-lg">📞 (302) 339-9679</a>
+            <Link href="/contact" className="block font-medium text-lg text-white hover:text-pink-400" onClick={() => setMobileOpen(false)}>Contact</Link>
+            <a href="tel:+13023399679" className="block font-bold text-white text-lg hover:text-pink-400">📞 (302) 339-9679</a>
             <Link href="/#quote" className="block text-center bg-primary text-white px-5 py-2.5 rounded-lg font-semibold" onClick={() => setMobileOpen(false)}>GET A QUOTE</Link>
           </div>
         </div>
