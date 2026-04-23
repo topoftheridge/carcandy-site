@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 interface HeroProps {
   title: string;
@@ -9,11 +10,16 @@ interface HeroProps {
 export default function Hero({ title, subtitle, showCTA = true }: HeroProps) {
   return (
     <section className="relative text-white overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-dark via-dark-light to-dark-lighter" />
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-10 left-10 w-72 h-72 bg-primary rounded-full blur-3xl" />
-        <div className="absolute bottom-10 right-10 w-96 h-96 bg-accent rounded-full blur-3xl" />
-      </div>
+      {/* Background image */}
+      <Image
+        src="/heropic1.jpg"
+        alt=""
+        fill
+        className="object-cover"
+        priority
+      />
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-black/60" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
         <div className="max-w-3xl">
@@ -21,7 +27,7 @@ export default function Hero({ title, subtitle, showCTA = true }: HeroProps) {
             <span className="text-primary">Car Candy</span>{" "}
             <span className="text-white">{title.replace("Car Candy ", "")}</span>
           </h1>
-          <p className="text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-200 mb-8 leading-relaxed">
             {subtitle}
           </p>
           {showCTA && (
