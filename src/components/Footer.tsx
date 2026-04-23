@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { locations } from "@/data/locations";
 
@@ -9,8 +10,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
           <div>
-            <div className="text-2xl font-bold mb-4">
-              <span className="text-primary">Car</span> <span className="text-white">Candy</span>
+            <div className="mb-4">
+              <Image src="/logoheader.png" alt="Car Candy Auto Detailing" width={170} height={100} className="h-16 w-auto" />
             </div>
             <p className="text-sm mb-4">Professional auto detailing services in Delaware County, PA. We bring your vehicle back to life.</p>
             <div className="space-y-2 text-sm">
