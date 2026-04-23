@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 interface HeroProps {
   title: string;
@@ -9,18 +8,7 @@ interface HeroProps {
 
 export default function Hero({ title, subtitle, showCTA = true }: HeroProps) {
   return (
-    <section className="relative text-white overflow-hidden">
-      {/* Background image */}
-      <Image
-        src="/heropic1.jpg"
-        alt=""
-        fill
-        className="object-cover"
-        priority
-      />
-      {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-black/60" />
-
+    <section className="relative text-white">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
         <div className="max-w-3xl">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">

@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import QuoteForm from "@/components/QuoteForm";
+import HeroBackground from "@/components/HeroBackground";
 import Link from "next/link";
 import { locations } from "@/data/locations";
 import { Sparkles, Shield, Clock, Droplets, Car, Paintbrush, Wrench } from "lucide-react";
@@ -32,14 +33,16 @@ export default function HomePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <Hero
-        title="Car Candy Auto Detailing"
-        subtitle="Professional auto detailing in Delaware County, PA. We restore, protect, and maintain your vehicle inside and out — because your ride deserves the candy treatment."
-      />
+      <HeroBackground>
+        <Hero
+          title="Car Candy Auto Detailing"
+          subtitle="Professional auto detailing in Delaware County, PA. We restore, protect, and maintain your vehicle inside and out — because your ride deserves the candy treatment."
+        />
 
-      <div className="px-4 sm:px-6 lg:px-8 pb-8">
-        <QuoteForm />
-      </div>
+        <div className="relative z-10 px-4 sm:px-6 lg:px-8 pb-8">
+          <QuoteForm />
+        </div>
+      </HeroBackground>
 
       {/* Why Choose Us */}
       <section className="py-16 lg:py-24 bg-dark-light">
