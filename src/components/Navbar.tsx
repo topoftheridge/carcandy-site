@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Phone, Menu, X, ChevronDown } from "lucide-react";
 import { locations } from "@/data/locations";
@@ -10,14 +11,11 @@ export default function Navbar() {
   const [areasOpen, setAreasOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-dark-light/95 backdrop-blur border-b border-white/10">
+    <nav className="sticky top-0 z-50 bg-black/95 backdrop-blur border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link href="/" className="flex items-center gap-2 shrink-0">
-            <span className="text-2xl font-bold">
-              <span className="text-primary">Car</span>{" "}
-              <span className="text-white">Candy</span>
-            </span>
+            <Image src="/logoheader.png" alt="Car Candy Auto Detailing" width={160} height={48} className="h-10 lg:h-12 w-auto" priority />
           </Link>
 
           {/* Desktop Nav */}
@@ -74,7 +72,7 @@ export default function Navbar() {
       </div>
 
       {mobileOpen && (
-        <div className="lg:hidden bg-dark-light border-t border-white/10 max-h-[80vh] overflow-y-auto">
+        <div className="lg:hidden bg-black border-t border-white/10 max-h-[80vh] overflow-y-auto">
           <div className="px-4 py-4 space-y-3">
             <Link href="/" className="block font-medium text-gray-300 hover:text-primary" onClick={() => setMobileOpen(false)}>Home</Link>
             <Link href="/about" className="block font-medium text-gray-300 hover:text-primary" onClick={() => setMobileOpen(false)}>About</Link>
