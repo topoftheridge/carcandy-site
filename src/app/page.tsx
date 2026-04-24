@@ -105,8 +105,20 @@ export default function HomePage() {
             From deep interior cleaning to full exterior restoration, we offer comprehensive detailing packages.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Interior Detailing — with background image */}
+            <Link href="/services#interior" className="group relative rounded-xl overflow-hidden border border-white/5 hover:border-primary/50 transition min-h-[260px] flex flex-col justify-end">
+              <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/interiorcard1.jpg')" }} />
+              <div className="absolute inset-0 bg-black/60" />
+              <div className="relative p-6">
+                <div className="text-primary mb-4"><Car className="w-10 h-10" /></div>
+                <h3 className="text-xl font-bold text-white mb-1">Interior Detailing</h3>
+                <p className="text-primary font-semibold text-sm mb-3">$90–$200</p>
+                <p className="text-gray-300 text-sm">Deep cleaning, stain removal, dashboard &amp; console detailing, upholstery treatment.</p>
+                <span className="inline-block mt-4 text-primary text-sm font-medium group-hover:underline">Learn More →</span>
+              </div>
+            </Link>
+
             {[
-              { icon: <Car className="w-10 h-10" />, title: "Interior Detailing", price: "$90–$200", desc: "Deep cleaning, stain removal, dashboard & console detailing, upholstery treatment.", href: "/services#interior" },
               { icon: <Paintbrush className="w-10 h-10" />, title: "Exterior Detailing", price: "$80–$160", desc: "Hand wash, paint decontamination, tire & wheel cleaning, trim restoration.", href: "/services#exterior" },
               { icon: <Wrench className="w-10 h-10" />, title: "Add-Ons", price: "From $30", desc: "Full wax, compound buff & wax, engine detail, floormat replacement.", href: "/services#addons" },
             ].map((s) => (
