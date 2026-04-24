@@ -32,26 +32,29 @@ export default function QuoteForm() {
 
   if (submitting) {
     return (
-      <div className="bg-dark-lighter border border-white/10 rounded-2xl shadow-2xl p-8 -mt-12 relative z-10 max-w-2xl mx-auto">
+      <div className="bg-dark-lighter border border-white/20 rounded-2xl shadow-2xl p-8 -mt-12 relative z-10 max-w-2xl mx-auto">
         <div className="flex flex-col items-center justify-center py-8">
-          {/* Bubbles animation */}
-          <div className="relative w-24 h-24 mb-4">
-            {[0, 1, 2, 3, 4, 5].map((i) => (
-              <div
-                key={i}
-                className="absolute rounded-full bg-primary/60 animate-bubble"
-                style={{
-                  width: `${12 + i * 4}px`,
-                  height: `${12 + i * 4}px`,
-                  left: `${15 + i * 12}px`,
-                  bottom: "0",
-                  animationDelay: `${i * 0.2}s`,
-                }}
-              />
-            ))}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 text-4xl">🧽</div>
+          {/* Spinning wheel */}
+          <div className="relative w-20 h-20 mb-4 animate-spin" style={{ animationDuration: "1.2s" }}>
+            <svg viewBox="0 0 100 100" className="w-full h-full">
+              <circle cx="50" cy="50" r="45" fill="none" stroke="#333" strokeWidth="6" />
+              <circle cx="50" cy="50" r="35" fill="none" stroke="#444" strokeWidth="2" />
+              <circle cx="50" cy="50" r="8" fill="#888" />
+              {[0, 60, 120, 180, 240, 300].map((angle) => (
+                <line
+                  key={angle}
+                  x1="50"
+                  y1="50"
+                  x2={50 + 34 * Math.cos((angle * Math.PI) / 180)}
+                  y2={50 + 34 * Math.sin((angle * Math.PI) / 180)}
+                  stroke="#555"
+                  strokeWidth="3"
+                />
+              ))}
+              <circle cx="50" cy="50" r="45" fill="none" stroke="#888" strokeWidth="8" strokeDasharray="20 10" />
+            </svg>
           </div>
-          <p className="text-lg font-semibold text-white animate-pulse">Polishing your request...</p>
+          <p className="text-lg font-semibold text-white animate-pulse">Processing your request...</p>
         </div>
       </div>
     );
@@ -59,7 +62,7 @@ export default function QuoteForm() {
 
   if (submitted) {
     return (
-      <div className="bg-dark-lighter border border-white/10 rounded-2xl shadow-2xl p-8 -mt-12 relative z-10 max-w-2xl mx-auto">
+      <div className="bg-dark-lighter border border-white/20 rounded-2xl shadow-2xl p-8 -mt-12 relative z-10 max-w-2xl mx-auto">
         <div className="flex flex-col items-center justify-center py-8">
           <div className="w-16 h-16 rounded-full bg-green-900/50 border border-green-500/30 flex items-center justify-center mb-5">
             <svg className="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -76,9 +79,9 @@ export default function QuoteForm() {
   }
 
   return (
-    <div id="quote" className="bg-dark-lighter border border-white/10 rounded-2xl shadow-2xl -mt-12 relative z-10 max-w-2xl mx-auto overflow-hidden">
+    <div id="quote" className="bg-dark-lighter border border-white/20 rounded-2xl shadow-2xl -mt-12 relative z-10 max-w-2xl mx-auto overflow-hidden">
       <div className="bg-primary px-6 py-4">
-        <h2 className="text-white font-bold text-lg">GET A FREE QUOTE</h2>
+        <h2 className="text-white font-bold text-lg">Get a Fast Quote</h2>
         <p className="text-white/70 text-xs mt-0.5">Quick &amp; easy — no obligation</p>
       </div>
 
@@ -138,8 +141,12 @@ export default function QuoteForm() {
           disabled={!canSubmit}
           className="w-full py-3 bg-primary text-white font-bold rounded-lg hover:bg-primary-dark transition text-sm disabled:opacity-40 disabled:cursor-not-allowed"
         >
-          Get Quote
+          Get My Quote
         </button>
+
+        <p className="text-[10px] text-gray-500 leading-snug">
+          By submitting, you agree to receive calls and text messages related to your request. I understand that I can unsubscribe at any time.
+        </p>
       </div>
     </div>
   );

@@ -36,7 +36,7 @@ export default function HomePage() {
       <HeroBackground>
         <Hero
           title="Car Candy Auto Detailing"
-          subtitle="Professional auto detailing in Delaware County, PA. We restore, protect, and maintain your vehicle inside and out — because your ride deserves the candy treatment."
+          subtitle="Car detailing in Delaware County, PA including interior cleaning, exterior detailing, and full-service packages to keep your vehicle looking its best."
         />
 
         <div className="relative z-10 px-4 sm:px-6 lg:px-8 pb-8">
