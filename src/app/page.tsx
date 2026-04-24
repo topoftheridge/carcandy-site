@@ -118,18 +118,31 @@ export default function HomePage() {
               </div>
             </Link>
 
-            {[
-              { icon: <Paintbrush className="w-10 h-10" />, title: "Exterior Detailing", price: "$80–$160", desc: "Hand wash, paint decontamination, tire & wheel cleaning, trim restoration.", href: "/services#exterior" },
-              { icon: <Wrench className="w-10 h-10" />, title: "Add-Ons", price: "From $30", desc: "Full wax, compound buff & wax, engine detail, floormat replacement.", href: "/services#addons" },
-            ].map((s) => (
-              <Link key={s.title} href={s.href} className="group p-6 rounded-xl bg-dark-lighter border border-white/5 hover:border-primary/50 transition">
-                <div className="text-primary mb-4">{s.icon}</div>
-                <h3 className="text-xl font-bold text-white mb-1">{s.title}</h3>
-                <p className="text-primary font-semibold text-sm mb-3">{s.price}</p>
-                <p className="text-gray-400 text-sm">{s.desc}</p>
+            {/* Exterior Detailing — with background image */}
+            <Link href="/services#exterior" className="group relative rounded-xl overflow-hidden border border-white/5 hover:border-primary/50 transition min-h-[260px] flex flex-col justify-end">
+              <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/exteriorcard1.jpg')" }} />
+              <div className="absolute inset-0 bg-black/60" />
+              <div className="relative p-6">
+                <div className="text-primary mb-4"><Paintbrush className="w-10 h-10" /></div>
+                <h3 className="text-xl font-bold text-white mb-1">Exterior Detailing</h3>
+                <p className="text-primary font-semibold text-sm mb-3">$80–$160</p>
+                <p className="text-gray-300 text-sm">Hand wash, paint decontamination, tire &amp; wheel cleaning, trim restoration.</p>
                 <span className="inline-block mt-4 text-primary text-sm font-medium group-hover:underline">Learn More →</span>
-              </Link>
-            ))}
+              </div>
+            </Link>
+
+            {/* Paint Enhancement & Protection — with background image */}
+            <Link href="/services#addons" className="group relative rounded-xl overflow-hidden border border-white/5 hover:border-primary/50 transition min-h-[260px] flex flex-col justify-end">
+              <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/Paintcard1.jpg')" }} />
+              <div className="absolute inset-0 bg-black/60" />
+              <div className="relative p-6">
+                <div className="text-primary mb-4"><Wrench className="w-10 h-10" /></div>
+                <h3 className="text-xl font-bold text-white mb-1">Paint Enhancement &amp; Protection</h3>
+                <p className="text-primary font-semibold text-sm mb-3">From $30</p>
+                <p className="text-gray-300 text-sm">Full wax, compound buff &amp; wax, engine detail, floormat replacement.</p>
+                <span className="inline-block mt-4 text-primary text-sm font-medium group-hover:underline">Learn More →</span>
+              </div>
+            </Link>
           </div>
         </div>
       </section>
