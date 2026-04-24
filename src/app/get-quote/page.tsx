@@ -1,9 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Car, Paintbrush, Sparkles, ChevronLeft, Check } from "lucide-react";
+import { Car, Paintbrush, Sparkles, ChevronLeft, ChevronRight, Check } from "lucide-react";
+
+const MONTH_NAMES = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const DAY_NAMES = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
 
 const SERVICES = [
   { id: "interior", icon: <Car className="w-10 h-10" />, title: "Interior Detailing", desc: "Deep cleaning for seats, carpets, and interior surfaces" },
@@ -42,6 +45,10 @@ export default function GetQuotePage() {
   const [phone, setPhone] = useState("");
   const [zip, setZip] = useState("");
   const [date, setDate] = useState("");
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const [calYear, setCalYear] = useState(today.getFullYear());
+  const [calMonth, setCalMonth] = useState(today.getMonth());
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
@@ -107,8 +114,8 @@ export default function GetQuotePage() {
         />
       </div>
 
-      <div className="flex-1 flex items-center justify-center px-4 py-12">
-        <div className="w-full max-w-2xl mx-auto">
+      <div className="flex-1 flex items-start justify-center px-4 pt-10 pb-12">
+        <div className="w-full max-w-3xl mx-auto">
 
           {/* Back button */}
           {step > 1 && (
@@ -119,15 +126,15 @@ export default function GetQuotePage() {
 
           {/* Step 1: Select Service */}
           {step === 1 && (
-            <div>
+            <div className="text-center">
               <h1 className="text-3xl lg:text-4xl font-bold text-white mb-2">What does your vehicle need?</h1>
               <p className="text-gray-400 mb-10">Select a service to get your free quote started.</p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {SERVICES.map((s) => (
                   <button
                     key={s.id}
                     onClick={() => { setService(s.id); setStep(2); }}
-                    className={`p-6 rounded-xl border text-left transition hover:border-primary/50 hover:bg-white/5 ${
+                    className={`p-6 rounded-xl border text-center transition hover:border-primary/50 hover:bg-white/5 flex flex-col items-center h-full ${
                       service === s.id ? "border-primary bg-white/5" : "border-white/10 bg-dark-lighter"
                     }`}
                   >
@@ -243,13 +250,17 @@ export default function GetQuotePage() {
                     />
                   </div>
                 </div>
+                {/* Inline calendar */}
                 <div>
-                  <label className="block text-xs font-medium text-gray-400 mb-1">Preferred Date (optional)</label>
-                  <input
-                    type="date"
-                    value={date}
-                    onChange={(e) => setDate(e.target.value)}
-                    className="w-full px-4 py-3 rounded-lg border border-white/10 bg-dark-lighter text-white outline-none text-sm focus:ring-2 focus:ring-primary/40 focus:border-primary [color-scheme:dark]"
+                  <label className="block text-xs font-medium text-gray-400 mb-2">Preferred Date (optional)</label>
+                  <MiniCalendar
+                    today={today}
+                    calYear={calYear}
+                    calMonth={calMonth}
+                    setCalYear={setCalYear}
+                    setCalMonth={setCalMonth}
+                    selected={date}
+                    onSelect={setDate}
                   />
                 </div>
               </div>
@@ -269,6 +280,87 @@ export default function GetQuotePage() {
           )}
         </div>
       </div>
+    </div>
+  );
+}
+
+function MiniCalendar({ today, calYear, calMonth, setCalYear, setCalMonth, selected, onSelect }: {
+  today: Date; calYear: number; calMonth: number;
+  setCalYear: (y: number) => void; setCalMonth: (m: number) => void;
+  selected: string; onSelect: (d: string) => void;
+}) {
+  const days = useMemo(() => {
+    const first = new Date(calYear, calMonth, 1);
+    const startDay = first.getDay();
+    const daysInMonth = new Date(calYear, calMonth + 1, 0).getDate();
+    const cells: (number | null)[] = [];
+    for (let i = 0; i < startDay; i++) cells.push(null);
+    for (let d = 1; d <= daysInMonth; d++) cells.push(d);
+    return cells;
+  }, [calYear, calMonth]);
+
+  const isPast = (day: number) => new Date(calYear, calMonth, day) < today;
+  const isSelected = (day: number) =>
+    selected === `${calYear}-${String(calMonth + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+  const canGoBack = calYear > today.getFullYear() || (calYear === today.getFullYear() && calMonth > today.getMonth());
+
+  const prevMonth = () => {
+    if (calMonth === 0) { setCalMonth(11); setCalYear(calYear - 1); }
+    else setCalMonth(calMonth - 1);
+  };
+  const nextMonth = () => {
+    if (calMonth === 11) { setCalMonth(0); setCalYear(calYear + 1); }
+    else setCalMonth(calMonth + 1);
+  };
+  const selectDay = (day: number) => {
+    if (isPast(day)) return;
+    onSelect(`${calYear}-${String(calMonth + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`);
+  };
+
+  return (
+    <div className="rounded-xl border border-white/10 bg-dark-lighter p-4">
+      <div className="flex items-center justify-between mb-3">
+        <button type="button" onClick={prevMonth} disabled={!canGoBack} className="p-1 hover:bg-white/10 rounded disabled:opacity-20 transition text-gray-400">
+          <ChevronLeft className="w-4 h-4" />
+        </button>
+        <span className="font-semibold text-white text-sm">{MONTH_NAMES[calMonth]} {calYear}</span>
+        <button type="button" onClick={nextMonth} className="p-1 hover:bg-white/10 rounded transition text-gray-400">
+          <ChevronRight className="w-4 h-4" />
+        </button>
+      </div>
+      <div className="grid grid-cols-7 mb-1">
+        {DAY_NAMES.map((d) => (
+          <div key={d} className="text-center text-[10px] font-medium text-gray-500 py-1">{d.charAt(0)}</div>
+        ))}
+      </div>
+      <div className="grid grid-cols-7">
+        {days.map((day, i) =>
+          day === null ? (
+            <div key={`e-${i}`} />
+          ) : (
+            <button
+              type="button"
+              key={day}
+              onClick={() => selectDay(day)}
+              disabled={isPast(day)}
+              className={`w-full aspect-square text-xs rounded-lg transition font-medium flex items-center justify-center ${
+                isSelected(day)
+                  ? "bg-primary text-white"
+                  : isPast(day)
+                  ? "text-gray-700 cursor-not-allowed"
+                  : "text-gray-300 hover:bg-white/10"
+              }`}
+            >
+              {day}
+            </button>
+          )
+        )}
+      </div>
+      {selected && (
+        <p className="text-xs text-gray-400 mt-2 text-center">
+          Selected: {new Date(selected + "T12:00:00").toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}
+        </p>
+      )}
     </div>
   );
 }

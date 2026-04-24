@@ -18,7 +18,7 @@ export default function AboutPage() {
 
       {/* Buttons under header */}
       <section className="bg-dark pt-0 pb-8">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row gap-4 -mt-4">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row gap-4 justify-center -mt-4">
           <Link href="/services" className="inline-flex items-center justify-center bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-primary-dark transition text-lg">
             View Our Services
           </Link>

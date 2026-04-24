@@ -105,7 +105,7 @@ export default function ServicesPage() {
           </div>
 
           <div className="mt-16 text-center">
-            <Link href="/#quote" className="inline-flex items-center justify-center bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-primary-dark transition text-lg">
+            <Link href="/get-quote" className="inline-flex items-center justify-center bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-primary-dark transition text-lg">
               Get Your Free Quote
             </Link>
           </div>

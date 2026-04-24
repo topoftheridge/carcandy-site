@@ -49,7 +49,7 @@ export default function ContactPage() {
               </div>
             ))}
 
-            <Link href="/#quote" className="inline-flex items-center justify-center bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-primary-dark transition text-lg w-full sm:w-auto">
+            <Link href="/get-quote" className="inline-flex items-center justify-center bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-primary-dark transition text-lg w-full sm:w-auto">
               Get a Free Quote
             </Link>
           </div>

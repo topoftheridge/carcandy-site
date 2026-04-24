@@ -57,7 +57,7 @@ export default function Navbar() {
                 (302) 339-9679
               </a>
               <Link
-                href="/#quote"
+                href="/get-quote"
                 className="bg-primary text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-primary-dark transition shadow-sm"
               >
                 BOOK NOW
@@ -89,7 +89,7 @@ export default function Navbar() {
             </div>
             <Link href="/contact" className="block font-medium text-lg text-white hover:text-primary" onClick={() => setMobileOpen(false)}>Contact</Link>
             <a href="tel:+13023399679" className="block font-bold text-white text-lg hover:text-primary">📞 (302) 339-9679</a>
-            <Link href="/#quote" className="block text-center bg-primary text-white px-5 py-2.5 rounded-lg font-semibold" onClick={() => setMobileOpen(false)}>BOOK NOW</Link>
+            <Link href="/get-quote" className="block text-center bg-primary text-white px-5 py-2.5 rounded-lg font-semibold" onClick={() => setMobileOpen(false)}>BOOK NOW</Link>
           </div>
         </div>
       )}

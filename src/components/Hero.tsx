@@ -21,7 +21,7 @@ export default function Hero({ title, subtitle, showCTA = true }: HeroProps) {
           {showCTA && (
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/#quote"
+                href="/get-quote"
                 className="inline-flex items-center justify-center bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-primary-dark transition shadow-lg text-lg"
               >
                 GET A FREE QUOTE
