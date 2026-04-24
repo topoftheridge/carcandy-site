@@ -15,7 +15,7 @@ export default function Hero({ title, subtitle, showCTA = true }: HeroProps) {
             <span className="text-primary">Car Candy</span>{" "}
             <span className="text-white">{title.replace("Car Candy ", "")}</span>
           </h1>
-          <p className="text-lg sm:text-xl text-gray-200 mb-8 leading-relaxed drop-shadow-md">
+          <p className="text-lg sm:text-xl text-white/90 mb-8 leading-relaxed drop-shadow-md">
             {subtitle}
           </p>
           {showCTA && (
