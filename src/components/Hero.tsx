@@ -9,7 +9,7 @@ interface HeroProps {
 export default function Hero({ title, subtitle, showCTA = true }: HeroProps) {
   return (
     <section className="relative text-white">
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-40 lg:pt-32 lg:pb-48 text-center">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-52 lg:pt-32 lg:pb-60 text-center">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 drop-shadow-lg">
             <span className="text-primary">Car Candy</span>{" "}

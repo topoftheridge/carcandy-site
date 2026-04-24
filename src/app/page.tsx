@@ -40,8 +40,13 @@ export default function HomePage() {
         />
       </HeroBackground>
 
-      <div className="relative z-10 px-4 sm:px-6 lg:px-8 -mt-24 pb-12">
-        <QuoteForm />
+      <div className="relative z-10 px-4 sm:px-6 lg:px-8 -mt-32 pb-12">
+        <div className="relative max-w-2xl mx-auto">
+          <div className="absolute -inset-4 bg-primary/15 rounded-3xl blur-2xl" />
+          <div className="relative">
+            <QuoteForm />
+          </div>
+        </div>
       </div>
 
       {/* Why Choose Us */}
