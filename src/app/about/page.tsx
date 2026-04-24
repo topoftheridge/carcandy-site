@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Hero from "@/components/Hero";
 import Link from "next/link";
 
@@ -10,11 +11,17 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <Hero
-        title="Car Candy Auto Detailing"
-        subtitle="Auto Detailing in Delaware County, PA"
-        showCTA={false}
-      />
+      <div className="relative overflow-hidden">
+        <Image src="/aboutcard1.jpg" alt="" fill className="object-cover object-center" priority />
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative">
+          <Hero
+            title="Car Candy Auto Detailing"
+            subtitle="Auto Detailing in Delaware County, PA"
+            showCTA={false}
+          />
+        </div>
+      </div>
 
       {/* Buttons under header */}
       <section className="bg-dark pt-0 pb-8">
