@@ -44,24 +44,53 @@ export default function HomePage() {
       </HeroBackground>
 
       {/* Why Choose Us */}
-      <section className="py-16 lg:py-24 bg-dark-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white text-center mb-12">
-            Why Choose <span className="text-primary">Car Candy</span>?
+      <section className="py-20 lg:py-32 bg-dark-light">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-primary font-semibold text-sm tracking-widest uppercase mb-3">Why Car Candy</p>
+          <h2 className="text-3xl lg:text-5xl font-bold text-white leading-tight max-w-2xl mb-16">
+            Not your average<br />car wash.
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { icon: <Sparkles className="w-8 h-8" />, title: "Premium Products", desc: "We use only professional-grade detailing products for a showroom finish every time." },
-              { icon: <Shield className="w-8 h-8" />, title: "Attention to Detail", desc: "Every inch of your vehicle is meticulously cleaned, polished, and protected." },
-              { icon: <Clock className="w-8 h-8" />, title: "Convenient Service", desc: "Open 7 days a week, 8 AM – 6 PM. We work around your schedule." },
-              { icon: <Droplets className="w-8 h-8" />, title: "Lasting Protection", desc: "Our detailing doesn't just clean — it protects your paint, interior, and investment." },
-            ].map((item) => (
-              <div key={item.title} className="text-center p-6 rounded-xl bg-dark-lighter border border-white/5 hover:border-primary/30 transition">
-                <div className="mb-4 flex justify-center text-primary">{item.icon}</div>
-                <h3 className="font-bold text-white text-lg mb-2">{item.title}</h3>
-                <p className="text-gray-400 text-sm">{item.desc}</p>
+
+          <div className="space-y-16">
+            <div className="flex items-start gap-6 lg:gap-10">
+              <div className="text-primary shrink-0 mt-1"><Sparkles className="w-6 h-6" /></div>
+              <div>
+                <h3 className="font-bold text-white text-xl mb-2">Premium Products Only</h3>
+                <p className="text-gray-400 text-base leading-relaxed max-w-xl">
+                  We use professional-grade detailing products — no shortcuts, no diluted sprays. Every vehicle gets a showroom-quality finish.
+                </p>
               </div>
-            ))}
+            </div>
+
+            <div className="flex items-start gap-6 lg:gap-10">
+              <div className="text-primary shrink-0 mt-1"><Shield className="w-6 h-6" /></div>
+              <div>
+                <h3 className="font-bold text-white text-xl mb-2">Obsessive Attention to Detail</h3>
+                <p className="text-gray-400 text-base leading-relaxed max-w-xl">
+                  Every inch of your vehicle is meticulously cleaned, polished, and protected. We treat your car like it&apos;s ours.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-6 lg:gap-10">
+              <div className="text-primary shrink-0 mt-1"><Clock className="w-6 h-6" /></div>
+              <div>
+                <h3 className="font-bold text-white text-xl mb-2">Open 7 Days a Week</h3>
+                <p className="text-gray-400 text-base leading-relaxed max-w-xl">
+                  8 AM – 6 PM, every day. We work around your schedule so you don&apos;t have to rearrange yours.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-6 lg:gap-10">
+              <div className="text-primary shrink-0 mt-1"><Droplets className="w-6 h-6" /></div>
+              <div>
+                <h3 className="font-bold text-white text-xl mb-2">Protection That Lasts</h3>
+                <p className="text-gray-400 text-base leading-relaxed max-w-xl">
+                  Our detailing doesn&apos;t just clean — it shields your paint, interior, and investment long after you drive away.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -109,8 +138,7 @@ export default function HomePage() {
                 href={`/${loc.slug}`}
                 className="p-4 rounded-lg bg-dark-lighter border border-white/5 hover:border-primary/50 transition text-center group"
               >
-                <span className="text-white font-semibold group-hover:text-primary transition">{loc.name}</span>
-                <span className="block text-gray-500 text-xs mt-1">PA</span>
+                <span className="text-white font-semibold group-hover:text-primary transition">{loc.name} →</span>
               </Link>
             ))}
           </div>

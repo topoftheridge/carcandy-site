@@ -32,7 +32,7 @@ export default function QuoteForm() {
 
   if (submitting) {
     return (
-      <div className="bg-dark-lighter border border-white/20 rounded-2xl shadow-2xl p-8 max-w-2xl mx-auto">
+      <div className="bg-dark-lighter border border-zinc-800 rounded-2xl shadow-2xl p-8 max-w-2xl mx-auto">
         <div className="flex flex-col items-center justify-center py-8">
           <div className="relative w-20 h-20 mb-4 animate-spin" style={{ animationDuration: "1.2s" }}>
             <svg viewBox="0 0 100 100" className="w-full h-full">
@@ -61,7 +61,7 @@ export default function QuoteForm() {
 
   if (submitted) {
     return (
-      <div className="bg-dark-lighter border border-white/20 rounded-2xl shadow-2xl p-8 max-w-2xl mx-auto">
+      <div className="bg-dark-lighter border border-zinc-800 rounded-2xl shadow-2xl p-8 max-w-2xl mx-auto">
         <div className="flex flex-col items-center justify-center py-8">
           <div className="w-16 h-16 rounded-full bg-green-900/50 border border-green-500/30 flex items-center justify-center mb-5">
             <svg className="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -88,10 +88,10 @@ export default function QuoteForm() {
   }
 
   return (
-    <div id="quote" className="bg-dark-lighter border border-white/20 rounded-2xl shadow-2xl max-w-2xl mx-auto overflow-hidden">
-      <div className="bg-white/90 px-6 py-4">
-        <h2 className="text-gray-900 font-bold text-lg">Get a Fast Quote</h2>
-        <p className="text-gray-500 text-xs mt-0.5">Quick &amp; easy — no obligation</p>
+    <div id="quote" className="bg-dark-lighter border border-zinc-800 rounded-2xl shadow-2xl max-w-2xl mx-auto overflow-hidden">
+      <div className="bg-zinc-800 px-6 py-4">
+        <h2 className="text-white font-bold text-lg">Get a Fast Quote</h2>
+        <p className="text-gray-400 text-xs mt-0.5">Quick &amp; easy — no obligation</p>
       </div>
 
       <div className="p-6 lg:p-8 space-y-4">
