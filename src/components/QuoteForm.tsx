@@ -80,9 +80,9 @@ export default function QuoteForm() {
 
   return (
     <div id="quote" className="bg-dark-lighter border border-white/20 rounded-2xl shadow-2xl -mt-12 relative z-10 max-w-2xl mx-auto overflow-hidden">
-      <div className="bg-primary px-6 py-4">
+      <div className="bg-white/10 backdrop-blur px-6 py-4 border-b border-white/10">
         <h2 className="text-white font-bold text-lg">Get a Fast Quote</h2>
-        <p className="text-white/70 text-xs mt-0.5">Quick &amp; easy — no obligation</p>
+        <p className="text-white/50 text-xs mt-0.5">Quick &amp; easy — no obligation</p>
       </div>
 
       <div className="p-6 lg:p-8 space-y-4">
