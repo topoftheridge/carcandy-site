@@ -10,7 +10,7 @@ export default function HeroBackground({ children }: { children: React.ReactNode
         className="object-cover object-right-center sm:object-center"
         priority
       />
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-black/50" />
       <div className="relative">{children}</div>
     </div>
   );

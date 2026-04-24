@@ -32,9 +32,8 @@ export default function QuoteForm() {
 
   if (submitting) {
     return (
-      <div className="bg-dark-lighter border border-white/20 rounded-2xl shadow-2xl p-8 -mt-12 relative z-10 max-w-2xl mx-auto">
+      <div className="bg-dark-lighter border border-white/20 rounded-2xl shadow-2xl p-8 max-w-2xl mx-auto">
         <div className="flex flex-col items-center justify-center py-8">
-          {/* Spinning wheel */}
           <div className="relative w-20 h-20 mb-4 animate-spin" style={{ animationDuration: "1.2s" }}>
             <svg viewBox="0 0 100 100" className="w-full h-full">
               <circle cx="50" cy="50" r="45" fill="none" stroke="#333" strokeWidth="6" />
@@ -62,24 +61,34 @@ export default function QuoteForm() {
 
   if (submitted) {
     return (
-      <div className="bg-dark-lighter border border-white/20 rounded-2xl shadow-2xl p-8 -mt-12 relative z-10 max-w-2xl mx-auto">
+      <div className="bg-dark-lighter border border-white/20 rounded-2xl shadow-2xl p-8 max-w-2xl mx-auto">
         <div className="flex flex-col items-center justify-center py-8">
           <div className="w-16 h-16 rounded-full bg-green-900/50 border border-green-500/30 flex items-center justify-center mb-5">
             <svg className="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h3 className="text-xl font-bold text-white mb-2">We&apos;ll Be in Touch! ✨</h3>
-          <p className="text-gray-400 text-sm text-center max-w-sm">
-            Thanks for reaching out! One of our detailing experts will contact you shortly to discuss your vehicle&apos;s needs.
+          <h3 className="text-xl font-bold text-white mb-3">Request Received — We&apos;ll Be in Touch Shortly</h3>
+          <p className="text-gray-400 text-sm text-center max-w-md mb-6">
+            Thanks for contacting Car Candy Auto Detailing. A member of our team will reach out shortly to confirm your service details and provide accurate pricing for your vehicle in Delaware County, PA.
           </p>
+          <div className="text-sm text-gray-400 text-center space-y-1">
+            <p>
+              Need immediate assistance? Call us at{" "}
+              <a href="tel:+13023399679" className="text-primary font-semibold hover:text-primary-light transition">(302) 339-9679</a>
+            </p>
+            <p>
+              Want to skip the wait?{" "}
+              <a href="/contact" className="text-primary font-semibold underline hover:text-primary-light transition">Schedule your appointment now →</a>
+            </p>
+          </div>
         </div>
       </div>
     );
   }
 
   return (
-    <div id="quote" className="bg-dark-lighter border border-white/20 rounded-2xl shadow-2xl -mt-12 relative z-10 max-w-2xl mx-auto overflow-hidden">
+    <div id="quote" className="bg-dark-lighter border border-white/20 rounded-2xl shadow-2xl max-w-2xl mx-auto overflow-hidden">
       <div className="bg-white/90 px-6 py-4">
         <h2 className="text-gray-900 font-bold text-lg">Get a Fast Quote</h2>
         <p className="text-gray-500 text-xs mt-0.5">Quick &amp; easy — no obligation</p>

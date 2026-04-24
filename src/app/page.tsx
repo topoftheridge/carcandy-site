@@ -38,11 +38,11 @@ export default function HomePage() {
           title="Car Candy Auto Detailing"
           subtitle="Car detailing in Delaware County, PA including interior cleaning, exterior detailing, and full-service packages to keep your vehicle looking its best."
         />
-
-        <div className="relative z-10 px-4 sm:px-6 lg:px-8 pb-8">
-          <QuoteForm />
-        </div>
       </HeroBackground>
+
+      <div className="relative z-10 px-4 sm:px-6 lg:px-8 -mt-24 pb-12">
+        <QuoteForm />
+      </div>
 
       {/* Why Choose Us */}
       <section className="py-16 lg:py-24 bg-dark-light">
