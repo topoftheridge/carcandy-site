@@ -46,7 +46,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li><Link href="/services#interior" className="hover:text-primary transition">Interior Detailing</Link></li>
               <li><Link href="/services#exterior" className="hover:text-primary transition">Exterior Detailing</Link></li>
-              <li><Link href="/services#addons" className="hover:text-primary transition">Add-Ons</Link></li>
+              <li><Link href="/services#addons" className="hover:text-primary transition">Paint Enhancement &amp; Protection</Link></li>
             </ul>
           </div>
 

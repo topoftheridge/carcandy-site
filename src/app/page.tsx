@@ -184,9 +184,9 @@ export default function HomePage() {
               Call (302) 339-9679
             </a>
             <span className="text-gray-500">or</span>
-            <a href="tel:+16107577512" className="inline-flex items-center justify-center bg-white/10 text-white font-bold px-8 py-4 rounded-lg hover:bg-white/20 transition border border-white/20 text-lg">
-              Call (610) 757-7512
-            </a>
+            <Link href="/get-quote" className="inline-flex items-center justify-center bg-white/10 text-white font-bold px-8 py-4 rounded-lg hover:bg-white/20 transition border border-white/20 text-lg">
+              GET A FREE QUOTE
+            </Link>
           </div>
           <div className="mt-8 text-sm text-gray-500">
             <p>Aston, PA (Delaware County) &nbsp;|&nbsp; Mon–Sun: 8 AM – 6 PM</p>
