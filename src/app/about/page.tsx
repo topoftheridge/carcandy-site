@@ -12,7 +12,7 @@ export default function AboutPage() {
   return (
     <>
       <div className="relative overflow-hidden">
-        <Image src="/aboutcard1.jpg" alt="" fill className="object-cover object-center" priority />
+        <Image src="/aboutcard1.jpg" alt="" fill className="object-cover object-[center_70%]" priority />
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative">
           <Hero
@@ -20,20 +20,16 @@ export default function AboutPage() {
             subtitle="Auto Detailing in Delaware County, PA"
             showCTA={false}
           />
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row gap-4 justify-center pb-12 -mt-20">
+            <Link href="/services" className="inline-flex items-center justify-center bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-primary-dark transition text-lg">
+              View Our Services
+            </Link>
+            <a href="tel:+13023399679" className="inline-flex items-center justify-center bg-white/10 backdrop-blur text-white font-bold px-8 py-4 rounded-lg hover:bg-white/20 transition border border-white/20 text-lg">
+              Call (302) 339-9679
+            </a>
+          </div>
         </div>
       </div>
-
-      {/* Buttons under header */}
-      <section className="bg-dark pt-0 pb-8">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row gap-4 justify-center -mt-4">
-          <Link href="/services" className="inline-flex items-center justify-center bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-primary-dark transition text-lg">
-            View Our Services
-          </Link>
-          <a href="tel:+13023399679" className="inline-flex items-center justify-center bg-white/10 text-white font-bold px-8 py-4 rounded-lg hover:bg-white/20 transition border border-white/20 text-lg">
-            Call (302) 339-9679
-          </a>
-        </div>
-      </section>
 
       {/* About Content with Image Spots */}
       <section className="py-16 lg:py-24 bg-dark">
