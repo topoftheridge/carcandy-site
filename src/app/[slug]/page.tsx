@@ -64,8 +64,9 @@ export default async function LocationPage({ params }: Props) {
             <h2 className="text-xl font-bold text-white mb-4">Services Available in {location.name}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
-                "Interior Detailing ($90–$200)",
-                "Exterior Detailing ($80–$160)",
+                "Complete Detail Package (Starting at $180)",
+                "Interior Detailing (Starting at $90)",
+                "Exterior Detailing (Starting at $90)",
                 "Full Wax ($35)",
                 "Compound Buff & Wax ($80)",
                 "Engine Detail ($60–$100)",
@@ -80,19 +81,15 @@ export default async function LocationPage({ params }: Props) {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/services" className="inline-flex items-center justify-center bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-primary-dark transition">
-              View All Services
-            </Link>
-            <Link href="/contact" className="inline-flex items-center justify-center bg-white/10 text-white font-bold px-8 py-4 rounded-lg hover:bg-white/20 transition border border-white/20">
-              Contact Us
+            <Link href="/get-quote" className="inline-flex items-center justify-center bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-primary-dark transition">
+              BOOK NOW
             </Link>
           </div>
 
           <div className="mt-12 p-6 rounded-xl bg-dark-lighter border border-white/5">
             <p className="text-gray-400 text-sm">
               Serving {location.name} and all of Delaware County, PA. Call{" "}
-              <a href="tel:+16107260151" className="text-primary font-semibold">(610) 726-0151</a> or{" "}
-              <a href="tel:+16107577512" className="text-primary font-semibold">(610) 757-7512</a> to schedule your detail today.
+              <a href="tel:+16107260151" className="text-primary font-semibold">(610) 726-0151</a> to schedule your detail today.
             </p>
           </div>
         </div>

@@ -55,22 +55,13 @@ export default function ExteriorDetailingPage() {
           </a>
         </div>
 
-        {/* Other Services */}
+                {/* Other Services */}
         <div className="mt-20 pt-12 border-t border-white/10">
           <h3 className="text-xl font-bold text-white mb-6 text-center">Explore Our Other Services</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <Link href="/services/full-detail-package" className="p-5 rounded-lg bg-dark-lighter border border-white/5 hover:border-primary/50 transition text-center group">
-              <span className="text-white font-semibold group-hover:text-primary transition">Complete Detail Package →</span>
-              <p className="text-gray-500 text-sm mt-1">Starting at $180</p>
-            </Link>
-            <Link href="/services/interior-detailing" className="p-5 rounded-lg bg-dark-lighter border border-white/5 hover:border-primary/50 transition text-center group">
-              <span className="text-white font-semibold group-hover:text-primary transition">Interior Detailing →</span>
-              <p className="text-gray-500 text-sm mt-1">Starting at $90</p>
-            </Link>
-            <Link href="/services/paint-protection" className="p-5 rounded-lg bg-dark-lighter border border-white/5 hover:border-primary/50 transition text-center group">
-              <span className="text-white font-semibold group-hover:text-primary transition">Paint Enhancement & Protection →</span>
-              <p className="text-gray-500 text-sm mt-1">From $30</p>
-            </Link>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10">
+            <Link href="/services/full-detail-package" className="text-gray-400 hover:text-primary transition text-lg">Complete Detail Package →</Link>
+            <Link href="/services/interior-detailing" className="text-gray-400 hover:text-primary transition text-lg">Interior Detailing →</Link>
+            <Link href="/services/paint-protection" className="text-gray-400 hover:text-primary transition text-lg">Paint Enhancement & Protection →</Link>
           </div>
         </div>
       </div>

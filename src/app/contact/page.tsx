@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact Us | Car Candy Auto Detailing",
-  description: "Get in touch with Car Candy Auto Detailing in Aston, PA. Call (610) 726-0151 or (610) 757-7512. Open 7 days a week, 8 AM – 6 PM.",
+  description: "Get in touch with Car Candy Auto Detailing in Aston, PA. Call (610) 726-0151. Open 7 days a week, 8 AM – 6 PM.",
 };
 
 export default function ContactPage() {
@@ -24,10 +24,7 @@ export default function ContactPage() {
           <div className="space-y-6">
             {[
               { icon: <Phone className="w-6 h-6" />, label: "Phone", content: (
-                <div className="space-y-1">
-                  <a href="tel:+16107260151" className="block text-white hover:text-primary transition font-semibold">(610) 726-0151</a>
-                  <a href="tel:+16107577512" className="block text-white hover:text-primary transition font-semibold">(610) 757-7512</a>
-                </div>
+                <a href="tel:+16107260151" className="text-white hover:text-primary transition font-semibold">(610) 726-0151</a>
               )},
               { icon: <Mail className="w-6 h-6" />, label: "Email", content: (
                 <a href="mailto:carcandyautodetailing@gmail.com" className="text-white hover:text-primary transition">carcandyautodetailing@gmail.com</a>
