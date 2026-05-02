@@ -14,6 +14,7 @@ export default function Navbar() {
   const [mobileAreasOpen, setMobileAreasOpen] = useState(false);
 
   return (
+    <>
     <nav className="sticky top-0 z-50 bg-black/95 backdrop-blur border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 lg:h-24">
@@ -96,63 +97,65 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
-      <div className={`lg:hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-40 transition-opacity duration-300 ${mobileOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`} onClick={() => setMobileOpen(false)} />
+    </nav>
 
-      {/* Mobile Menu Panel */}
-      <div className={`lg:hidden fixed top-0 right-0 h-full w-[280px] bg-black/95 backdrop-blur-lg border-l border-white/10 z-50 transform transition-transform duration-300 ease-out ${mobileOpen ? "translate-x-0" : "translate-x-full"} overflow-y-auto`}>
-        <div className="flex items-center justify-end p-5">
-          <button className="p-2 text-white" onClick={() => setMobileOpen(false)} aria-label="Close menu">
-            <X className="w-6 h-6" />
+    {/* Mobile Menu Overlay */}
+    <div className={`lg:hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] transition-opacity duration-300 ${mobileOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`} onClick={() => setMobileOpen(false)} />
+
+    {/* Mobile Menu Panel */}
+    <div className={`lg:hidden fixed top-0 right-0 h-full w-[280px] bg-black/95 backdrop-blur-lg border-l border-white/10 z-[70] transform transition-transform duration-300 ease-out ${mobileOpen ? "translate-x-0" : "translate-x-full"} overflow-y-auto`}>
+      <div className="flex items-center justify-end p-5">
+        <button className="p-2 text-white" onClick={() => setMobileOpen(false)} aria-label="Close menu">
+          <X className="w-6 h-6" />
+        </button>
+      </div>
+      <div className="px-6 pb-8 space-y-1">
+        <Link href="/" className="block py-3 font-medium text-lg text-white hover:text-primary transition border-b border-white/5" onClick={() => setMobileOpen(false)}>Home</Link>
+        <Link href="/about" className="block py-3 font-medium text-lg text-white hover:text-primary transition border-b border-white/5" onClick={() => setMobileOpen(false)}>About</Link>
+        
+        {/* Services Accordion */}
+        <div className="border-b border-white/5">
+          <button className="w-full py-3 font-medium text-lg text-white hover:text-primary transition flex items-center justify-between" onClick={() => setMobileServicesOpen(!mobileServicesOpen)}>
+            Services
+            <ChevronDown className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""}`} />
           </button>
+          <div className={`overflow-hidden transition-all duration-300 ${mobileServicesOpen ? "max-h-48 pb-3" : "max-h-0"}`}>
+            <div className="pl-4 space-y-2">
+              <Link href="/services/full-detail-package" className="block text-base text-gray-400 hover:text-primary transition" onClick={() => setMobileOpen(false)}>Complete Detail Package</Link>
+              <Link href="/services/interior-detailing" className="block text-base text-gray-400 hover:text-primary transition" onClick={() => setMobileOpen(false)}>Interior Detailing</Link>
+              <Link href="/services/exterior-detailing" className="block text-base text-gray-400 hover:text-primary transition" onClick={() => setMobileOpen(false)}>Exterior Detailing</Link>
+              <Link href="/services/paint-protection" className="block text-base text-gray-400 hover:text-primary transition" onClick={() => setMobileOpen(false)}>Paint Enhancement &amp; Protection</Link>
+            </div>
+          </div>
         </div>
-        <div className="px-6 pb-8 space-y-1">
-          <Link href="/" className="block py-3 font-medium text-lg text-white hover:text-primary transition border-b border-white/5" onClick={() => setMobileOpen(false)}>Home</Link>
-          <Link href="/about" className="block py-3 font-medium text-lg text-white hover:text-primary transition border-b border-white/5" onClick={() => setMobileOpen(false)}>About</Link>
-          
-          {/* Services Accordion */}
-          <div className="border-b border-white/5">
-            <button className="w-full py-3 font-medium text-lg text-white hover:text-primary transition flex items-center justify-between" onClick={() => setMobileServicesOpen(!mobileServicesOpen)}>
-              Services
-              <ChevronDown className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${mobileServicesOpen ? "rotate-180" : ""}`} />
-            </button>
-            <div className={`overflow-hidden transition-all duration-300 ${mobileServicesOpen ? "max-h-48 pb-3" : "max-h-0"}`}>
-              <div className="pl-4 space-y-2">
-                <Link href="/services/full-detail-package" className="block text-base text-gray-400 hover:text-primary transition" onClick={() => setMobileOpen(false)}>Complete Detail Package</Link>
-                <Link href="/services/interior-detailing" className="block text-base text-gray-400 hover:text-primary transition" onClick={() => setMobileOpen(false)}>Interior Detailing</Link>
-                <Link href="/services/exterior-detailing" className="block text-base text-gray-400 hover:text-primary transition" onClick={() => setMobileOpen(false)}>Exterior Detailing</Link>
-                <Link href="/services/paint-protection" className="block text-base text-gray-400 hover:text-primary transition" onClick={() => setMobileOpen(false)}>Paint Enhancement &amp; Protection</Link>
-              </div>
+
+        {/* Areas Accordion */}
+        <div className="border-b border-white/5">
+          <button className="w-full py-3 font-medium text-lg text-white hover:text-primary transition flex items-center justify-between" onClick={() => setMobileAreasOpen(!mobileAreasOpen)}>
+            Areas Served
+            <ChevronDown className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${mobileAreasOpen ? "rotate-180" : ""}`} />
+          </button>
+          <div className={`overflow-hidden transition-all duration-300 ${mobileAreasOpen ? "max-h-96 pb-3" : "max-h-0"}`}>
+            <div className="pl-4 space-y-2">
+              {locations.map((loc) => (
+                <Link key={loc.slug} href={`/${loc.slug}`} className="block text-base text-gray-400 hover:text-primary transition" onClick={() => setMobileOpen(false)}>
+                  {loc.name}, PA
+                </Link>
+              ))}
             </div>
           </div>
+        </div>
 
-          {/* Areas Accordion */}
-          <div className="border-b border-white/5">
-            <button className="w-full py-3 font-medium text-lg text-white hover:text-primary transition flex items-center justify-between" onClick={() => setMobileAreasOpen(!mobileAreasOpen)}>
-              Areas Served
-              <ChevronDown className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${mobileAreasOpen ? "rotate-180" : ""}`} />
-            </button>
-            <div className={`overflow-hidden transition-all duration-300 ${mobileAreasOpen ? "max-h-96 pb-3" : "max-h-0"}`}>
-              <div className="pl-4 space-y-2">
-                {locations.map((loc) => (
-                  <Link key={loc.slug} href={`/${loc.slug}`} className="block text-base text-gray-400 hover:text-primary transition" onClick={() => setMobileOpen(false)}>
-                    {loc.name}, PA
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <Link href="/contact" className="block py-3 font-medium text-lg text-white hover:text-primary transition border-b border-white/5" onClick={() => setMobileOpen(false)}>Contact</Link>
-          
-          <div className="pt-4 space-y-3">
-            <a href="tel:+16107260151" className="flex items-center gap-2 font-bold text-white text-lg hover:text-primary transition">
-              <Phone className="w-5 h-5" /> (610) 726-0151
-            </a>
-            <Link href="/get-quote" className="block text-center bg-primary text-white px-5 py-3 rounded-lg font-semibold hover:bg-primary-dark transition" onClick={() => setMobileOpen(false)}>BOOK NOW</Link>
-          </div>
+        <Link href="/contact" className="block py-3 font-medium text-lg text-white hover:text-primary transition border-b border-white/5" onClick={() => setMobileOpen(false)}>Contact</Link>
+        
+        <div className="pt-4 space-y-3">
+          <a href="tel:+16107260151" className="flex items-center gap-2 font-bold text-white text-lg hover:text-primary transition">
+            <Phone className="w-5 h-5" /> (610) 726-0151
+          </a>
+          <Link href="/get-quote" className="block text-center bg-primary text-white px-5 py-3 rounded-lg font-semibold hover:bg-primary-dark transition" onClick={() => setMobileOpen(false)}>BOOK NOW</Link>
         </div>
       </div>
-    </nav>
+    </div>
+    </>
   );
 }
