@@ -7,7 +7,7 @@ export default function HeroBackground({ children }: { children: React.ReactNode
         src="/heropic1.jpg"
         alt=""
         fill
-        className="object-cover object-right-center sm:object-center"
+        className="object-cover object-[65%_center] sm:object-center"
         priority
       />
       <div className="absolute inset-0 bg-black/50" />

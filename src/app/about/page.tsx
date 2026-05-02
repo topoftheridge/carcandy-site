@@ -12,7 +12,7 @@ export default function AboutPage() {
   return (
     <>
       <div className="relative overflow-hidden">
-        <Image src="/aboutcard1.jpg" alt="" fill className="object-cover object-[center_70%]" priority />
+        <Image src="/aboutcard1.jpg" alt="" fill className="object-cover object-[70%_70%] sm:object-[center_70%]" priority />
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative">
           <Hero
