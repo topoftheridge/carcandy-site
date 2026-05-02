@@ -105,45 +105,39 @@ export default function HomePage() {
             From deep interior cleaning to full exterior restoration, we offer comprehensive detailing packages.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Interior Detailing — with background image */}
-            <Link href="/services#interior" className="group relative rounded-xl overflow-hidden border border-white/5 hover:border-primary/50 transition min-h-[320px] flex flex-col justify-between">
+            {/* Interior Detailing */}
+            <Link href="/services#interior" className="group relative rounded-xl overflow-hidden border border-white/5 hover:border-primary/50 transition min-h-[320px] flex flex-col justify-center">
               <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/interiorcard1.jpg')" }} />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70" />
-              <div className="relative pt-8 px-8">
-                <h3 className="text-3xl lg:text-4xl font-bold text-white mb-2">Interior Detailing</h3>
+              <div className="absolute inset-0 bg-black/60" />
+              <div className="relative p-8 flex flex-col items-start gap-3">
+                <h3 className="text-3xl lg:text-4xl font-bold text-white leading-tight">Interior Detailing</h3>
                 <p className="text-primary font-bold text-lg drop-shadow-[0_0_14px_rgba(236,72,153,0.7)]">Starting at $90</p>
-              </div>
-              <div className="relative pb-8 px-8">
                 <p className="text-gray-200 text-base leading-relaxed">Deep cleaning, stain removal, dashboard &amp; console detailing, upholstery treatment.</p>
-                <span className="inline-block mt-3 text-primary text-base font-medium group-hover:underline">Learn More →</span>
+                <span className="text-primary text-base font-medium group-hover:underline mt-1">Learn More →</span>
               </div>
             </Link>
 
-            {/* Exterior Detailing — with background image */}
-            <Link href="/services#exterior" className="group relative rounded-xl overflow-hidden border border-white/5 hover:border-primary/50 transition min-h-[320px] flex flex-col justify-between">
+            {/* Exterior Detailing */}
+            <Link href="/services#exterior" className="group relative rounded-xl overflow-hidden border border-white/5 hover:border-primary/50 transition min-h-[320px] flex flex-col justify-center">
               <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/exteriorcard1.jpg')" }} />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70" />
-              <div className="relative pt-8 px-8">
-                <h3 className="text-3xl lg:text-4xl font-bold text-white mb-2">Exterior Detailing</h3>
+              <div className="absolute inset-0 bg-black/60" />
+              <div className="relative p-8 flex flex-col items-start gap-3">
+                <h3 className="text-3xl lg:text-4xl font-bold text-white leading-tight">Exterior Detailing</h3>
                 <p className="text-primary font-bold text-lg drop-shadow-[0_0_14px_rgba(236,72,153,0.7)]">Starting at $90</p>
-              </div>
-              <div className="relative pb-8 px-8">
                 <p className="text-gray-200 text-base leading-relaxed">Hand wash, paint decontamination, tire &amp; wheel cleaning, trim restoration.</p>
-                <span className="inline-block mt-3 text-primary text-base font-medium group-hover:underline">Learn More →</span>
+                <span className="text-primary text-base font-medium group-hover:underline mt-1">Learn More →</span>
               </div>
             </Link>
 
-            {/* Paint Enhancement & Protection — with background image */}
-            <Link href="/services#addons" className="group relative rounded-xl overflow-hidden border border-white/5 hover:border-primary/50 transition min-h-[320px] flex flex-col justify-between">
+            {/* Paint Enhancement & Protection */}
+            <Link href="/services#addons" className="group relative rounded-xl overflow-hidden border border-white/5 hover:border-primary/50 transition min-h-[320px] flex flex-col justify-center">
               <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/Paintcard1.jpg')" }} />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70" />
-              <div className="relative pt-8 px-8">
-                <h3 className="text-3xl lg:text-4xl font-bold text-white mb-2">Paint Enhancement &amp; Protection</h3>
+              <div className="absolute inset-0 bg-black/60" />
+              <div className="relative p-8 flex flex-col items-start gap-3">
+                <h3 className="text-2xl lg:text-3xl font-bold text-white leading-tight">Paint Enhancement &amp;&nbsp;Protection</h3>
                 <p className="text-primary font-bold text-lg drop-shadow-[0_0_14px_rgba(236,72,153,0.7)]">From $30</p>
-              </div>
-              <div className="relative pb-8 px-8">
                 <p className="text-gray-200 text-base leading-relaxed">Full wax, compound buff &amp; wax, engine detail, floormat replacement.</p>
-                <span className="inline-block mt-3 text-primary text-base font-medium group-hover:underline">Learn More →</span>
+                <span className="text-primary text-base font-medium group-hover:underline mt-1">Learn More →</span>
               </div>
             </Link>
           </div>
