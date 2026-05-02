@@ -30,7 +30,7 @@ export default async function LocationPage({ params }: Props) {
     "@type": "LocalBusiness",
     name: "Car Candy Auto Detailing",
     description: `Professional auto detailing services in ${location.name}, PA.`,
-    telephone: "+13023399679",
+    telephone: "+16107260151",
     email: "carcandyautodetailing@gmail.com",
     address: {
       "@type": "PostalAddress",
@@ -91,7 +91,7 @@ export default async function LocationPage({ params }: Props) {
           <div className="mt-12 p-6 rounded-xl bg-dark-lighter border border-white/5">
             <p className="text-gray-400 text-sm">
               Serving {location.name} and all of Delaware County, PA. Call{" "}
-              <a href="tel:+13023399679" className="text-primary font-semibold">(302) 339-9679</a> or{" "}
+              <a href="tel:+16107260151" className="text-primary font-semibold">(610) 726-0151</a> or{" "}
               <a href="tel:+16107577512" className="text-primary font-semibold">(610) 757-7512</a> to schedule your detail today.
             </p>
           </div>

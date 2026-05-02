@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: "%s | Car Candy Auto Detailing",
   },
   description:
-    "Professional auto detailing services in Aston, PA and Delaware County. Interior & exterior detailing, waxing, paint correction. Call (302) 339-9679.",
+    "Professional auto detailing services in Aston, PA and Delaware County. Interior & exterior detailing, waxing, paint correction. Call (610) 726-0151.",
   keywords: [
     "auto detailing Aston PA",
     "car detailing Delaware County",

@@ -75,7 +75,7 @@ export default function QuoteForm() {
           <div className="text-sm text-gray-400 text-center space-y-1">
             <p>
               Need immediate assistance? Call us at{" "}
-              <a href="tel:+13023399679" className="text-primary font-semibold hover:text-primary-light transition">(302) 339-9679</a>
+              <a href="tel:+16107260151" className="text-primary font-semibold hover:text-primary-light transition">(610) 726-0151</a>
             </p>
             <p>
               Want to skip the wait?{" "}

@@ -24,8 +24,8 @@ export default function AboutPage() {
             <Link href="/services" className="inline-flex items-center justify-center bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-primary-dark transition text-lg">
               View Our Services
             </Link>
-            <a href="tel:+13023399679" className="inline-flex items-center justify-center bg-white/10 backdrop-blur text-white font-bold px-8 py-4 rounded-lg hover:bg-white/20 transition border border-white/20 text-lg">
-              Call (302) 339-9679
+            <a href="tel:+16107260151" className="inline-flex items-center justify-center bg-white/10 backdrop-blur text-white font-bold px-8 py-4 rounded-lg hover:bg-white/20 transition border border-white/20 text-lg">
+              Call (610) 726-0151
             </a>
           </div>
         </div>
@@ -110,8 +110,8 @@ export default function AboutPage() {
           </h2>
           <p className="text-gray-400 mb-6">Get in touch today for a free quote.</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="tel:+13023399679" className="inline-flex items-center justify-center bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-primary-dark transition text-lg">
-              Call (302) 339-9679
+            <a href="tel:+16107260151" className="inline-flex items-center justify-center bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-primary-dark transition text-lg">
+              Call (610) 726-0151
             </a>
             <Link href="/get-quote" className="inline-flex items-center justify-center bg-white/10 text-white font-bold px-8 py-4 rounded-lg hover:bg-white/20 transition border border-white/20 text-lg">
               GET A FREE QUOTE

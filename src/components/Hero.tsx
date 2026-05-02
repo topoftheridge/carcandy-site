@@ -27,10 +27,10 @@ export default function Hero({ title, subtitle, showCTA = true }: HeroProps) {
                 GET A FREE QUOTE
               </Link>
               <a
-                href="tel:+13023399679"
+                href="tel:+16107260151"
                 className="inline-flex items-center justify-center bg-white/10 backdrop-blur text-white font-bold px-8 py-4 rounded-lg hover:bg-white/20 transition border border-white/20 text-lg"
               >
-                CALL (302) 339-9679
+                CALL (610) 726-0151
               </a>
             </div>
           )}

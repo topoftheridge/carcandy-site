@@ -17,8 +17,7 @@ export default function Footer() {
             <div className="space-y-2 text-sm">
               <div className="flex items-center gap-2"><MapPin className="w-4 h-4 text-primary" /> Aston, PA</div>
               <div className="flex items-center gap-2"><Clock className="w-4 h-4 text-primary" /> Mon–Sun: 8 AM – 6 PM</div>
-              <div className="flex items-center gap-2"><Phone className="w-4 h-4 text-primary" /> <a href="tel:+13023399679" className="hover:text-primary transition">(302) 339-9679</a></div>
-              <div className="flex items-center gap-2"><Phone className="w-4 h-4 text-primary" /> <a href="tel:+16107577512" className="hover:text-primary transition">(610) 757-7512</a></div>
+              <div className="flex items-center gap-2"><Phone className="w-4 h-4 text-primary" /> <a href="tel:+16107260151" className="hover:text-primary transition">(610) 726-0151</a></div>
               <div className="flex items-center gap-2"><Mail className="w-4 h-4 text-primary" /> <a href="mailto:carcandyautodetailing@gmail.com" className="hover:text-primary transition">carcandyautodetailing@gmail.com</a></div>
             </div>
             <div className="mt-4">

@@ -3,7 +3,7 @@ import QuoteForm from "@/components/QuoteForm";
 import HeroBackground from "@/components/HeroBackground";
 import Link from "next/link";
 import { locations } from "@/data/locations";
-import { Sparkles, Shield, Clock, Droplets, Car, Paintbrush, Wrench } from "lucide-react";
+import { Sparkles, Shield, Clock, Droplets } from "lucide-react";
 
 export default function HomePage() {
   const jsonLd = {
@@ -12,7 +12,7 @@ export default function HomePage() {
     name: "Car Candy Auto Detailing",
     description: "Professional auto detailing services in Aston, PA and Delaware County. Interior & exterior detailing, waxing, paint correction.",
     url: "https://carcandy-site.vercel.app",
-    telephone: "+13023399679",
+    telephone: "+16107260151",
     email: "carcandyautodetailing@gmail.com",
     address: {
       "@type": "PostalAddress",
@@ -106,41 +106,38 @@ export default function HomePage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Interior Detailing — with background image */}
-            <Link href="/services#interior" className="group relative rounded-xl overflow-hidden border border-white/5 hover:border-primary/50 transition min-h-[260px] flex flex-col justify-end">
+            <Link href="/services#interior" className="group relative rounded-xl overflow-hidden border border-white/5 hover:border-primary/50 transition min-h-[320px] flex flex-col justify-end">
               <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/interiorcard1.jpg')" }} />
-              <div className="absolute inset-0 bg-black/60" />
-              <div className="relative p-6">
-                <div className="text-primary mb-4"><Car className="w-10 h-10" /></div>
-                <h3 className="text-xl font-bold text-white mb-1">Interior Detailing</h3>
-                <p className="text-primary font-semibold text-sm mb-3">$90–$200</p>
-                <p className="text-gray-300 text-sm">Deep cleaning, stain removal, dashboard &amp; console detailing, upholstery treatment.</p>
-                <span className="inline-block mt-4 text-primary text-sm font-medium group-hover:underline">Learn More →</span>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
+              <div className="relative p-8">
+                <h3 className="text-3xl lg:text-4xl font-bold text-white mb-2">Interior Detailing</h3>
+                <p className="text-primary font-bold text-lg mb-3 drop-shadow-[0_0_14px_rgba(236,72,153,0.7)]">Starting at $90</p>
+                <p className="text-gray-200 text-base leading-relaxed">Deep cleaning, stain removal, dashboard &amp; console detailing, upholstery treatment.</p>
+                <span className="inline-block mt-4 text-primary text-base font-medium group-hover:underline">Learn More →</span>
               </div>
             </Link>
 
             {/* Exterior Detailing — with background image */}
-            <Link href="/services#exterior" className="group relative rounded-xl overflow-hidden border border-white/5 hover:border-primary/50 transition min-h-[260px] flex flex-col justify-end">
+            <Link href="/services#exterior" className="group relative rounded-xl overflow-hidden border border-white/5 hover:border-primary/50 transition min-h-[320px] flex flex-col justify-end">
               <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/exteriorcard1.jpg')" }} />
-              <div className="absolute inset-0 bg-black/60" />
-              <div className="relative p-6">
-                <div className="text-primary mb-4"><Paintbrush className="w-10 h-10" /></div>
-                <h3 className="text-xl font-bold text-white mb-1">Exterior Detailing</h3>
-                <p className="text-primary font-semibold text-sm mb-3">$80–$160</p>
-                <p className="text-gray-300 text-sm">Hand wash, paint decontamination, tire &amp; wheel cleaning, trim restoration.</p>
-                <span className="inline-block mt-4 text-primary text-sm font-medium group-hover:underline">Learn More →</span>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
+              <div className="relative p-8">
+                <h3 className="text-3xl lg:text-4xl font-bold text-white mb-2">Exterior Detailing</h3>
+                <p className="text-primary font-bold text-lg mb-3 drop-shadow-[0_0_14px_rgba(236,72,153,0.7)]">Starting at $90</p>
+                <p className="text-gray-200 text-base leading-relaxed">Hand wash, paint decontamination, tire &amp; wheel cleaning, trim restoration.</p>
+                <span className="inline-block mt-4 text-primary text-base font-medium group-hover:underline">Learn More →</span>
               </div>
             </Link>
 
             {/* Paint Enhancement & Protection — with background image */}
-            <Link href="/services#addons" className="group relative rounded-xl overflow-hidden border border-white/5 hover:border-primary/50 transition min-h-[260px] flex flex-col justify-end">
+            <Link href="/services#addons" className="group relative rounded-xl overflow-hidden border border-white/5 hover:border-primary/50 transition min-h-[320px] flex flex-col justify-end">
               <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/Paintcard1.jpg')" }} />
-              <div className="absolute inset-0 bg-black/60" />
-              <div className="relative p-6">
-                <div className="text-primary mb-4"><Wrench className="w-10 h-10" /></div>
-                <h3 className="text-xl font-bold text-white mb-1">Paint Enhancement &amp; Protection</h3>
-                <p className="text-primary font-semibold text-sm mb-3">From $30</p>
-                <p className="text-gray-300 text-sm">Full wax, compound buff &amp; wax, engine detail, floormat replacement.</p>
-                <span className="inline-block mt-4 text-primary text-sm font-medium group-hover:underline">Learn More →</span>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
+              <div className="relative p-8">
+                <h3 className="text-3xl lg:text-4xl font-bold text-white mb-2">Paint Enhancement &amp; Protection</h3>
+                <p className="text-primary font-bold text-lg mb-3 drop-shadow-[0_0_14px_rgba(236,72,153,0.7)]">From $30</p>
+                <p className="text-gray-200 text-base leading-relaxed">Full wax, compound buff &amp; wax, engine detail, floormat replacement.</p>
+                <span className="inline-block mt-4 text-primary text-base font-medium group-hover:underline">Learn More →</span>
               </div>
             </Link>
           </div>
@@ -180,8 +177,8 @@ export default function HomePage() {
             Call us today or fill out the form above for a free, no-obligation quote.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="tel:+13023399679" className="inline-flex items-center justify-center bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-primary-dark transition text-lg">
-              Call (302) 339-9679
+            <a href="tel:+16107260151" className="inline-flex items-center justify-center bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-primary-dark transition text-lg">
+              Call (610) 726-0151
             </a>
             <span className="text-gray-500">or</span>
             <Link href="/get-quote" className="inline-flex items-center justify-center bg-white/10 text-white font-bold px-8 py-4 rounded-lg hover:bg-white/20 transition border border-white/20 text-lg">
