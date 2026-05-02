@@ -43,9 +43,10 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Our Services</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/services#interior" className="hover:text-primary transition">Interior Detailing</Link></li>
-              <li><Link href="/services#exterior" className="hover:text-primary transition">Exterior Detailing</Link></li>
-              <li><Link href="/services#addons" className="hover:text-primary transition">Paint Enhancement &amp; Protection</Link></li>
+              <li><Link href="/services/full-detail-package" className="hover:text-primary transition">Complete Detail Package</Link></li>
+              <li><Link href="/services/interior-detailing" className="hover:text-primary transition">Interior Detailing</Link></li>
+              <li><Link href="/services/exterior-detailing" className="hover:text-primary transition">Exterior Detailing</Link></li>
+              <li><Link href="/services/paint-protection" className="hover:text-primary transition">Paint Enhancement &amp; Protection</Link></li>
             </ul>
           </div>
 

@@ -9,6 +9,8 @@ import { locations } from "@/data/locations";
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [areasOpen, setAreasOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   return (
     <nav className="sticky top-0 z-50 bg-black/95 backdrop-blur border-b border-white/10">
@@ -23,7 +25,25 @@ export default function Navbar() {
             <div className="flex items-center gap-14 mr-auto ml-8">
               <Link href="/" className="text-white text-lg hover:text-primary transition font-medium tracking-wide">Home</Link>
               <Link href="/about" className="text-white text-lg hover:text-primary transition font-medium tracking-wide">About</Link>
-              <Link href="/services" className="text-white text-lg hover:text-primary transition font-medium tracking-wide">Services</Link>
+              <div
+                className="relative"
+                onMouseEnter={() => setServicesOpen(true)}
+                onMouseLeave={() => setServicesOpen(false)}
+              >
+                <button className="text-white text-lg hover:text-primary transition font-medium tracking-wide flex items-center gap-1">
+                  Services <ChevronDown className="w-5 h-5" />
+                </button>
+                {servicesOpen && (
+                  <div className="absolute top-full left-0 mt-0 pt-2">
+                    <div className="bg-dark-lighter border border-white/10 rounded-lg shadow-xl py-2 w-64">
+                      <Link href="/services/full-detail-package" className="block px-4 py-2.5 text-base text-gray-300 hover:bg-primary/20 hover:text-primary transition">Complete Detail Package</Link>
+                      <Link href="/services/interior-detailing" className="block px-4 py-2.5 text-base text-gray-300 hover:bg-primary/20 hover:text-primary transition">Interior Detailing</Link>
+                      <Link href="/services/exterior-detailing" className="block px-4 py-2.5 text-base text-gray-300 hover:bg-primary/20 hover:text-primary transition">Exterior Detailing</Link>
+                      <Link href="/services/paint-protection" className="block px-4 py-2.5 text-base text-gray-300 hover:bg-primary/20 hover:text-primary transition">Paint Enhancement &amp; Protection</Link>
+                    </div>
+                  </div>
+                )}
+              </div>
               <div
                 className="relative"
                 onMouseEnter={() => setAreasOpen(true)}
@@ -76,7 +96,19 @@ export default function Navbar() {
           <div className="px-4 py-4 space-y-3">
             <Link href="/" className="block font-medium text-lg text-white hover:text-primary" onClick={() => setMobileOpen(false)}>Home</Link>
             <Link href="/about" className="block font-medium text-lg text-white hover:text-primary" onClick={() => setMobileOpen(false)}>About</Link>
-            <Link href="/services" className="block font-medium text-lg text-white hover:text-primary" onClick={() => setMobileOpen(false)}>Services</Link>
+            <div>
+              <button className="font-medium text-lg text-white hover:text-primary flex items-center gap-1" onClick={() => setMobileServicesOpen(!mobileServicesOpen)}>
+                Services <ChevronDown className={`w-5 h-5 transition ${mobileServicesOpen ? "rotate-180" : ""}`} />
+              </button>
+              {mobileServicesOpen && (
+                <div className="pl-4 mt-2 space-y-2">
+                  <Link href="/services/full-detail-package" className="block text-base text-gray-400 hover:text-primary" onClick={() => setMobileOpen(false)}>Complete Detail Package</Link>
+                  <Link href="/services/interior-detailing" className="block text-base text-gray-400 hover:text-primary" onClick={() => setMobileOpen(false)}>Interior Detailing</Link>
+                  <Link href="/services/exterior-detailing" className="block text-base text-gray-400 hover:text-primary" onClick={() => setMobileOpen(false)}>Exterior Detailing</Link>
+                  <Link href="/services/paint-protection" className="block text-base text-gray-400 hover:text-primary" onClick={() => setMobileOpen(false)}>Paint Enhancement &amp; Protection</Link>
+                </div>
+              )}
+            </div>
             <div>
               <p className="font-medium text-lg text-white mb-2">Areas Served</p>
               <div className="pl-4 space-y-2">
