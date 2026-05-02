@@ -148,7 +148,7 @@ export default function HomePage() {
               <div>
                 <h3 className="text-2xl lg:text-3xl font-bold text-white mb-2">Complete Detail Package</h3>
                 <p className="text-gray-300 text-base lg:text-lg leading-relaxed mb-3">Interior + Exterior detailing bundled together for a full vehicle refresh.</p>
-                <p className="text-primary font-bold text-xl drop-shadow-[0_0_14px_rgba(236,72,153,0.7)]">Starting at $150</p>
+                <p className="text-primary font-bold text-xl drop-shadow-[0_0_14px_rgba(236,72,153,0.7)]">Starting at $180</p>
                 <p className="text-gray-400 text-sm mt-1">Final pricing depends on vehicle size and condition.</p>
               </div>
               <div className="shrink-0">

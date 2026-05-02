@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Phone } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Paint Enhancement & Protection | Car Candy Auto Detailing",
@@ -38,10 +39,32 @@ export default function PaintProtectionPage() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
+        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link href="/get-quote" className="inline-flex items-center justify-center bg-primary text-white font-bold px-8 py-4 rounded-lg hover:bg-primary-dark transition text-lg">
             Get Your Free Quote
           </Link>
+          <a href="tel:+16107260151" className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur text-white font-bold px-8 py-4 rounded-lg hover:bg-white/20 transition border border-white/20 text-lg">
+            <Phone className="w-5 h-5" /> Call (610) 726-0151
+          </a>
+        </div>
+
+        {/* Other Services */}
+        <div className="mt-20 pt-12 border-t border-white/10">
+          <h3 className="text-xl font-bold text-white mb-6 text-center">Explore Our Other Services</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <Link href="/services/full-detail-package" className="p-5 rounded-lg bg-dark-lighter border border-white/5 hover:border-primary/50 transition text-center group">
+              <span className="text-white font-semibold group-hover:text-primary transition">Complete Detail Package →</span>
+              <p className="text-gray-500 text-sm mt-1">Starting at $180</p>
+            </Link>
+            <Link href="/services/interior-detailing" className="p-5 rounded-lg bg-dark-lighter border border-white/5 hover:border-primary/50 transition text-center group">
+              <span className="text-white font-semibold group-hover:text-primary transition">Interior Detailing →</span>
+              <p className="text-gray-500 text-sm mt-1">Starting at $90</p>
+            </Link>
+            <Link href="/services/exterior-detailing" className="p-5 rounded-lg bg-dark-lighter border border-white/5 hover:border-primary/50 transition text-center group">
+              <span className="text-white font-semibold group-hover:text-primary transition">Exterior Detailing →</span>
+              <p className="text-gray-500 text-sm mt-1">Starting at $90</p>
+            </Link>
+          </div>
         </div>
       </div>
     </section>
